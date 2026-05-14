@@ -1,0 +1,164 @@
+.contact-premium-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  overflow: hidden;
+  background-color: #010204;
+}
+
+.contact-canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.contact-ui-layout {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1400px;
+  pointer-events: none; /* Allows pointer clicks to pass down to OrbitControls */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7rem 5% 4rem;
+  gap: 3rem;
+}
+
+.glassmorphism-console {
+  pointer-events: auto; /* Enable UI inputs */
+  max-width: 520px;
+  width: 100%;
+  padding: 2.5rem;
+  background: rgba(1, 2, 4, 0.85);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 24px;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.9), inset 0 0 20px rgba(0, 212, 255, 0.05);
+}
+
+.contact-form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.input-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.input-field-group label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.input-field-group input, 
+.input-field-group select, 
+.input-field-group textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-size: 0.85rem;
+  color: #ffffff;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.input-field-group input:focus, 
+.input-field-group select:focus, 
+.input-field-group textarea:focus {
+  background: rgba(0, 212, 255, 0.05);
+  border-color: #00d4ff;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+}
+
+.input-field-group select option {
+  background: #020408;
+  color: #ffffff;
+}
+
+.secure-transmit-btn {
+  margin-top: 0.5rem;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #00d4ff 0%, #0066cc 100%);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.secure-transmit-btn:hover {
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
+  transform: translateY(-1px);
+}
+
+.regional-liaison-panel {
+  pointer-events: auto; /* Enable tab clicks */
+  max-width: 440px;
+  width: 100%;
+  padding: 2.25rem;
+  background: rgba(1, 2, 4, 0.85);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 0.6rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.4);
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.tab-btn.active {
+  color: #00d4ff;
+  background: rgba(0, 212, 255, 0.1);
+  box-shadow: inset 0 0 10px rgba(0, 212, 255, 0.1);
+}
+
+@media (max-width: 1024px) {
+  .contact-ui-layout {
+    flex-direction: column;
+    padding: 6rem 1rem 3rem 1rem;
+    gap: 2rem;
+  }
+  
+  .glassmorphism-console, .regional-liaison-panel {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+}

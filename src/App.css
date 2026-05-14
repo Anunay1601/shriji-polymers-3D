@@ -1,0 +1,69 @@
+.app-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none; /* Let pointer events pass through to UI */
+}
+
+.canvas-container canvas {
+  pointer-events: auto; /* Enable interaction with 3D canvas if needed */
+}
+
+.scroll-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+/* Sections Base Styling */
+section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(80px, 10vh, 120px) 5% clamp(40px, 5vh, 80px);
+  justify-content: center;
+}
+
+.section-title {
+  font-size: var(--text-3xl, clamp(2.25rem, 2rem + 2vw, 3.5rem));
+  margin-bottom: 1.25rem;
+  line-height: 1.1;
+  font-weight: 800;
+  max-width: 100%;
+  word-break: break-word;
+}
+
+.section-subtitle {
+  font-size: var(--text-base, clamp(0.95rem, 0.9rem + 0.4vw, 1.1rem));
+  color: var(--color-text-muted);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding-top: 100px; /* Account for mobile sticky navigation bar */
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.page-view-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}

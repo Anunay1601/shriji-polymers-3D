@@ -1,0 +1,292 @@
+.products-section {
+  align-items: center;
+  padding: 5rem 0;
+  width: 100%;
+}
+
+.products-showcase {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  height: 600px;
+  margin-top: 2rem;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.products-canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: #030508;
+}
+
+.products-ui {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  pointer-events: none; /* Let clicks pass through to canvas by default */
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.products-tabs {
+  pointer-events: auto; /* Re-enable clicks for UI elements */
+  flex: 0 0 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 0.5rem;
+  align-self: flex-start;
+}
+
+.holographic-panel {
+  background: rgba(5, 8, 16, 0.6);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.1), inset 0 0 10px rgba(0, 212, 255, 0.05);
+}
+
+.holographic-card {
+  background: linear-gradient(135deg, rgba(5, 8, 16, 0.8) 0%, rgba(5, 8, 16, 0.4) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 212, 255, 0.4);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 212, 255, 0.15), inset 0 0 20px rgba(0, 212, 255, 0.1);
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tab-btn:hover {
+  color: #ffffff;
+  background: rgba(0, 212, 255, 0.1);
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
+}
+
+.tab-btn.active {
+  color: #00d4ff;
+  background: rgba(0, 212, 255, 0.15);
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
+}
+
+.tab-indicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: #00d4ff;
+  box-shadow: 0 0 10px #00d4ff;
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.tab-btn.active .tab-indicator {
+  transform: scaleY(1);
+}
+
+.tab-name {
+  position: relative;
+  z-index: 2;
+}
+
+.product-details {
+  pointer-events: auto; /* Re-enable clicks */
+  flex: 0 0 450px;
+  margin-left: auto; /* Push to right */
+  align-self: center;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-specs {
+  font-size: 0.85rem;
+  color: #00d4ff;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+}
+
+.product-title {
+  font-size: var(--text-2xl, clamp(1.75rem, 1.5rem + 1.2vw, 2.5rem));
+  margin-bottom: 1.25rem;
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  max-width: 100%;
+  word-break: break-word;
+}
+
+.product-desc {
+  font-size: var(--text-base, clamp(0.95rem, 0.9rem + 0.4vw, 1.1rem));
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.feature-list {
+  list-style: none;
+  margin-bottom: 3rem;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.feature-icon.glow {
+  color: #00d4ff;
+  filter: drop-shadow(0 0 5px rgba(0, 212, 255, 0.8));
+}
+
+.outline-glow {
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.2), inset 0 0 10px rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.5);
+}
+
+.outline-glow:hover {
+  box-shadow: 0 0 25px rgba(0, 212, 255, 0.4), inset 0 0 15px rgba(0, 212, 255, 0.2);
+}
+
+@media (max-width: 1024px) {
+  .products-showcase {
+    height: auto;
+    min-height: 800px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .products-canvas-container {
+    position: relative;
+    height: 350px;
+  }
+
+  .products-ui {
+    position: relative;
+    height: auto;
+    flex-direction: column;
+    padding: 1.25rem 1rem;
+    gap: 1.5rem;
+  }
+  
+  .products-tabs {
+    flex: none;
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 1rem;
+  }
+
+  .product-details {
+    flex: none;
+    width: 100%;
+    margin-left: 0;
+    padding: 1.5rem 1rem;
+  }
+  
+  .tab-indicator {
+    width: 100%;
+    height: 4px;
+    top: auto;
+    bottom: 0;
+    transform: scaleX(0);
+  }
+
+  .tab-btn.active .tab-indicator {
+    transform: scaleX(1);
+  }
+}
+
+.glass-btn {
+  padding: 1rem 2.5rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 212, 255, 0.1);
+  color: #ffffff;
+}
+
+.glass-btn:hover {
+  background: rgba(0, 212, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.specs-table-container {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 212, 255, 0.25);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: inset 0 0 15px rgba(0, 212, 255, 0.05);
+}
+
+.specs-row {
+  display: flex;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.8rem 1.2rem;
+  font-size: 0.95rem;
+  transition: background 0.2s ease;
+}
+
+.specs-row:hover {
+  background: rgba(0, 212, 255, 0.05);
+}
+
+.specs-row:last-child {
+  border-bottom: none;
+}
+
+.specs-label {
+  flex: 0 0 150px;
+  color: #00d4ff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.specs-value {
+  flex: 1;
+  color: #ffffff;
+  opacity: 0.95;
+  line-height: 1.4;
+}

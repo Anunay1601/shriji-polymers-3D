@@ -21,8 +21,8 @@ const Hero = () => {
             Experience the pinnacle of intelligent design, robotic automation, and uncompromised quality standards.
           </p>
           <div className="hero-actions">
-            <button className="glass-btn primary">Explore Products</button>
-            <button className="glass-btn secondary">Our Vision</button>
+            <a href="#products" className="glass-btn primary">Explore Products</a>
+            <a href="#sustainability" className="glass-btn secondary">Our Vision</a>
           </div>
         </motion.div>
       </div>

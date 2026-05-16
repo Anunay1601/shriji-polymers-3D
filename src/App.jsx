@@ -15,6 +15,7 @@ import LegalPage from './components/sections/LegalPage';
 import ContactSection from './components/sections/ContactSection';
 import Footer from './components/sections/Footer';
 import Navigation from './components/ui/Navigation';
+import LoadingScreen from './components/ui/LoadingScreen';
 
 import './App.css';
 
@@ -62,6 +63,7 @@ function App() {
 
   return (
     <div className="app-container" ref={containerRef}>
+      <LoadingScreen />
       <Navigation />
 
       {/* 1. EXCLUSIVE HOME PAGE VIEW */}
@@ -74,11 +76,11 @@ function App() {
               camera={{ position: [0, 0, 5], fov: 45 }}
               gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
               dpr={[1, 1.2]}
+              style={{ background: '#050810' }}
             >
               <Suspense fallback={null}>
                 <Scene />
                 <Environment preset="city" />
-                <Preload all />
               </Suspense>
             </Canvas>
           </div>

@@ -75,6 +75,7 @@
 }
 
 .glass-btn {
+  display: inline-block;
   padding: 1rem 2.5rem;
   border-radius: 30px;
   font-size: 1rem;
@@ -84,6 +85,7 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   backdrop-filter: blur(10px);
+  text-decoration: none;
 }
 
 .glass-btn.primary {
